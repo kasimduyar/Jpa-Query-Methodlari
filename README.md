@@ -1,6 +1,6 @@
 # KSM JAVA ! 
 Bu bir Kasım Duyar projesidir ! 
-| LİKE  | METHODU  |
+| METHODU  |
 | ------------ | ------------ |
 | Like  | Spring Data JPA'da "Like metodu", belirli bir desene (pattern) uyan verileri veritabanından sorgulamak için kullanılan bir yöntemdir.  |
 <p>
