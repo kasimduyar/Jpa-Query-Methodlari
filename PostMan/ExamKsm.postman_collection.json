@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "989e08f7-b173-41c8-9267-a8cebaf48bdd",
+		"name": "ExamKsm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41993553"
+	},
+	"item": [
+		{
+			"name": "Product Listele",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Ürün Ekle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Masa\",\r\n    \"description\": \"Kasım Duyardan Temiz  !\",\r\n    \"status\" :\"forSale\",\r\n    \"price\" : 6000,\r\n    \"color\" : \"ff27ff\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/productksm/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Title Arama (Like)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/like?title=Araba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"like"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Araba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Title İstenmeyen(NotLike)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/notlike?title=araba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"notlike"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "araba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Desc Arama(StartsWith)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/start?prefix=te",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"start"
+					],
+					"query": [
+						{
+							"key": "prefix",
+							"value": "te"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Desc Sonu Arama(EndsWith)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/nstart?suffix=!",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"nstart"
+					],
+					"query": [
+						{
+							"key": "suffix",
+							"value": "!"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Aralık Belirtme (Beetwen)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/minmax?minPrice=2000&maxPrice=10000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"minmax"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "2000"
+						},
+						{
+							"key": "maxPrice",
+							"value": "10000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Filtreleme (TitleAndBeetwen)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/filter?title=saat&minPrice=100&maxPrice=50000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "saat"
+						},
+						{
+							"key": "minPrice",
+							"value": "100"
+						},
+						{
+							"key": "maxPrice",
+							"value": "50000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Ucuzu Belirleme(LessThan)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/inexpensive?price=5000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"inexpensive"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "5000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Pahalıyı Belirleme (GreaterThan)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/expensive?price=3500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"expensive"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "3500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product İsim Belirleme (In)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/titles?titles=saat,araba,tablet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"titles"
+					],
+					"query": [
+						{
+							"key": "titles",
+							"value": "saat,araba,tablet"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product İstenmeyen Id(NotIn)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/pid?pid=1,2,4,6,7,9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"pid"
+					],
+					"query": [
+						{
+							"key": "pid",
+							"value": "1,2,4,6,7,9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product BoşOlanlar (Null)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/productksm/cnull",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"productksm",
+						"cnull"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
